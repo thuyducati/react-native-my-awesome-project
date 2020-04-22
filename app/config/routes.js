@@ -2,12 +2,13 @@ import React from "react";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import Splash from "../screens/Splash";
+import Login from "../components/Login/Login";
 import Home from "../screens/Home";
 import Timeline from "../screens/Timeline";
 import Settings from "../screens/Settings";
 import Icon from "react-native-vector-icons/FontAwesome5";
 
-const AppNavigator = createBottomTabNavigator(
+const TabNavigator = createBottomTabNavigator(
     {
         Home: {
             screen: Home,
@@ -36,12 +37,18 @@ const AppNavigator = createBottomTabNavigator(
             activeTintColor: "orange",
             inactiveTintColor: "gray",
             showLabel: true
-        }
+        },
+        order: [
+            "Home",
+            "Timeline",
+            "Settings"
+        ]
     }
 );
 const InitialNavigator = createSwitchNavigator({
     Splash: Splash,
-    Tab: AppNavigator
+    Login: Login,
+    Home: TabNavigator
 });
 
 export default createAppContainer(InitialNavigator);

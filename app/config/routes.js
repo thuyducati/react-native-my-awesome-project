@@ -1,17 +1,30 @@
 import React from "react";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
-import Splash from "../screens/Splash";
-import Login from "../components/Login/Login";
-import Home from "../screens/Home";
-import Timeline from "../screens/Timeline";
-import Settings from "../screens/Settings";
+import { createStackNavigator } from "react-navigation-stack";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import Splash from "../components/Splash/Splash";
+import Login from "../components/Login/Login";
+import Home from "../components/Home/Home";
+import Timeline from "../components/Timeline/Timeline";
+import Settings from "../components/Settings/Settings";
+import TodoComponent from "../components/Todo";
+import CounterComponent from "../components/Counter";
 
+const HomeNavigator = createStackNavigator(
+    {
+        Home: Home,
+        Todo: TodoComponent,
+        Counter: CounterComponent
+    },
+    {
+        initialRouteName: "Home"
+    }
+);
 const TabNavigator = createBottomTabNavigator(
     {
         Home: {
-            screen: Home,
+            screen: HomeNavigator,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) =>
                     <Icon name="home" size={25} color={tintColor} />

@@ -9,8 +9,7 @@ import {
     Text,
     TextInput,
     TouchableOpacity,
-    Keyboard,
-    Button
+    Keyboard
 } from "react-native";
 import styles from "./styles";
 

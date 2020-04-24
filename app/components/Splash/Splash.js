@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import { View, Text, StatusBar } from "react-native";
-import styles from "../config/styles";
+import {
+    View,
+    Text,
+    StatusBar
+} from "react-native";
+import styles from "./styles";
 
 class Splash extends Component {
     performTimeConsumingTask = () => {
@@ -21,9 +25,12 @@ class Splash extends Component {
     }
     render() {
         return (
-            <View style={styles.viewStyles}>
-                <StatusBar hidden={true} />
-                <Text style={styles.textStyles}>
+            <View
+                style={styles.viewStyles}>
+                <StatusBar
+                    hidden={true} />
+                <Text
+                    style={styles.textStyles}>
                     Welcome to {"\n"} GMO-Z.com RUNSYSTEM
                 </Text>
             </View>

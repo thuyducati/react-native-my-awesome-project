@@ -1,4 +1,7 @@
-import { StyleSheet, Dimensions } from "react-native";
+import {
+    StyleSheet,
+    Dimensions
+} from "react-native";
 
 var MAX_WIDTH = Dimensions.get("screen").width;
 

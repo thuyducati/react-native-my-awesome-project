@@ -2,12 +2,11 @@ import React, { Component } from "react";
 import {
     View,
     Text,
-    StyleSheet,
-    Platform,
     FlatList,
     RefreshControl
 } from "react-native";
-import { fetchDataFromServer } from "../config/server";
+import { fetchDataFromServer } from "../../config/server";
+import styles from "./styles";
 
 const DataTemplate = (props) => {
     return (
@@ -71,7 +70,7 @@ class Timeline extends Component {
                 <FlatList
                     ref={"usersList"}
                     data={this.state.data}
-                    renderItem={({ item, index }) => <DataTemplate item={item} index={index} parentFlatlist={this} />}
+                    renderItem={({ item, index }) => <DataTemplate item={item} index={index} parentFlatList={this} />}
                     keyExtractor={(item, index) => index.toString()}
                     refreshControl={<RefreshControl refreshing={this.state.isRefreshing} onRefresh={this.refreshItems} />}
                 />
@@ -79,29 +78,5 @@ class Timeline extends Component {
         );
     };
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: (Platform === "ios") ? 35 : 0
-    },
-    templateContainer: {
-        flex: 1,
-        flexDirection: "row",
-        margin: 10
-    },
-    itemContainer: {
-        flex: 1,
-        flexDirection: "column"
-    },
-    dataStyle: {
-        color: "black",
-        fontSize: 15
-    },
-    separatorStyle: {
-        backgroundColor: "lightgray",
-        height: 1
-    }
-});
 
 export default Timeline;

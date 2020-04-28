@@ -3,6 +3,7 @@ package com.myawesomeproject;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import io.invertase.firebase.RNFirebasePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import org.reactnative.maskedview.RNCMaskedViewPackage;
 import com.th3rdwave.safeareacontext.SafeAreaContextPackage;
@@ -29,6 +30,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFirebasePackage(),
             new VectorIconsPackage(),
             new RNCMaskedViewPackage(),
             new SafeAreaContextPackage(),

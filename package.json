@@ -10,7 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@react-native-community/cli-platform-android": "^4.7.0",
+    "@react-native-community/cli-platform-android": "^4.8.0",
+    "@react-native-community/cli-platform-ios": "^4.8.0",
     "@react-native-community/masked-view": "^0.1.9",
     "react": "16.8.3",
     "react-native": "0.59.9",

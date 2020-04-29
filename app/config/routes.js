@@ -5,6 +5,7 @@ import { createStackNavigator } from "react-navigation-stack";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import Splash from "../components/Splash/Splash";
 import Login from "../components/Login/Login";
+import Register from "../components/Register/Register";
 import Home from "../components/Home/Home";
 import Timeline from "../components/Timeline/Timeline";
 import Settings from "../components/Settings/Settings";
@@ -58,9 +59,23 @@ const TabNavigator = createBottomTabNavigator(
         ]
     }
 );
+const AuthNavigator = createStackNavigator({
+    Login: {
+        screen: Login,
+        navigationOptions: {
+            headerShown: false
+        }
+    },
+    Register: { 
+        screen: Register,
+        navigationOptions: {
+            headerShown: false
+        }
+    }
+})
 const InitialNavigator = createSwitchNavigator({
     Splash: Splash,
-    Login: Login,
+    Auth: AuthNavigator,
     Home: TabNavigator
 });
 

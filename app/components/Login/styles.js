@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
         right: 0,
         bottom: 0,
         padding: 20,
-        height: 200
+        height: 240
     },
     loginField: {
         backgroundColor: 'rgba(255, 255, 255, 0.2)',

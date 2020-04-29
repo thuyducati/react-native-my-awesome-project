@@ -20,7 +20,7 @@ class Splash extends Component {
         // Pre-load data using AsyncStorage.
         const data = await this.performTimeConsumingTask();
         if (data != null) {
-            this.props.navigation.navigate("Login");
+            this.props.navigation.navigate("Auth");
         }
     }
     render() {

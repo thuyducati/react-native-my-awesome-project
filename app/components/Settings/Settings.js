@@ -16,24 +16,27 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {};
 };
-const DataTemplate = (props) => {
-    return (
-        <View
-            style={styles.rowTemplate}>
-            <Text
-                style={[
-                    styles.taskNameText,
-                    {
-                        color: (props.completed == true) ? "green" : "red",
-                        fontWeight: "bold"
-                    }
-                ]}>
-                {(props.taskId).toString().concat(" - ")}
-                {props.taskName.concat(" ----- ")}
-                {props.completed == true ? "Completed" : "In Progress"}
-            </Text>
-        </View>
-    );
+
+class DataTemplate extends Component {
+    render() {
+        return (
+            <View
+                style={styles.rowTemplate}>
+                <Text
+                    style={[
+                        styles.taskNameText,
+                        {
+                            color: (this.props.completed == true) ? "green" : "red",
+                            fontWeight: "bold"
+                        }
+                    ]}>
+                    {(this.props.taskId).toString().concat(" - ")}
+                    {this.props.taskName.concat(" ----- ")}
+                    {this.props.completed == true ? "Completed" : "In Progress"}
+                </Text>
+            </View>
+        );
+    };
 };
 
 class Settings extends Component {

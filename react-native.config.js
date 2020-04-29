@@ -1,17 +1,25 @@
-const ios = require("@react-native-community/cli-platform-ios");
-const android = require("@react-native-community/cli-platform-android");
+const ios = require('@react-native-community/cli-platform-ios');
+const android = require('@react-native-community/cli-platform-android');
 
 module.exports = {
-    platforms: {
-        ios: {
-            linkConfig: ios.linkConfig,
-            projectConfig: ios.projectConfig,
-            dependencyConfig: ios.dependencyConfig
-        },
-        android: {
-            linkConfig: android.linkConfig,
-            projectConfig: android.projectConfig,
-            dependencyConfig: android.dependencyConfig
-        }
-    }
+  platforms: {
+    ios: {
+      linkConfig: ios.linkConfig,
+      projectConfig: ios.projectConfig,
+      dependencyConfig: ios.dependencyConfig,
+    },
+    android: {
+      linkConfig: android.linkConfig,
+      projectConfig: android.projectConfig,
+      dependencyConfig: android.dependencyConfig,
+    },
+  },
+  transformer: {
+    getTransformOptions: async () => ({
+      transform: {
+        experimentalImportSupport: false,
+        inlineRequires: false,
+      },
+    }),
+  },
 };

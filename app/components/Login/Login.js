@@ -80,6 +80,20 @@ class Login extends Component {
                                         SIGN IN
                                     </Text>
                                 </TouchableOpacity>
+
+                                <TouchableOpacity
+                                    onPress={() => this.props.navigation.navigate("Register")}>
+                                    <Text
+                                        style={{
+                                            color: "#f7c744", 
+                                            marginTop: 20,
+                                            marginBottom: 10,
+                                            textAlign: "center",
+                                            fontSize: 16
+                                        }}>
+                                        Register an account
+                                    </Text>
+                                </TouchableOpacity>
                             </View>
                         </View>
                     </TouchableWithoutFeedback>

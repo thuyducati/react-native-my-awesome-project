@@ -8,25 +8,42 @@ import {
 import { fetchDataFromServer } from "../../config/server";
 import styles from "./styles";
 
-const DataTemplate = (props) => {
-    return (
-        <View
-            style={styles.templateContainer}>
+class DataTemplate extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            getName: "",
+            getEmail: ""
+        };
+    }
+
+    componentDidMount() {
+        this.setState({
+            getName: this.props.item.name,
+            getEmail: this.props.item.email
+        });
+    }
+
+    render() {
+        return (
             <View
-                style={styles.itemContainer}>
-                <Text
-                    style={styles.dataStyle}>
-                    {props.item.name}
-                </Text>
-                <Text
-                    style={styles.dataStyle}>
-                    {props.item.email}
-                </Text>
+                style={styles.templateContainer}>
                 <View
-                    style={styles.separatorStyle} />
+                    style={styles.itemContainer}>
+                    <Text
+                        style={styles.dataStyle}>
+                        {this.state.getName}
+                    </Text>
+                    <Text
+                        style={styles.dataStyle}>
+                        {this.state.getEmail}
+                    </Text>
+                    <View
+                        style={styles.separatorStyle} />
+                </View>
             </View>
-        </View>
-    );
+        );
+    };
 };
 
 class Timeline extends Component {

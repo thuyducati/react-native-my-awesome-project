@@ -1,14 +1,14 @@
-import { connect } from "react-redux";
-import { addNewTask } from "../../redux/actions/Todo";
-import AddComponent from "../../components/Todo/AddComponent";
+import {connect} from 'react-redux';
+import {addNewTask} from '../../redux/actions/Todo';
+import AddComponent from '../../components/Todo/AddComponent';
 
 const mapStateToProps = (state) => {
-    return {};
+  return {};
 };
 const mapDispatchToProps = (dispatch) => {
-    return {
-        onClickAdd: (taskName) => dispatch(addNewTask(taskName))
-    };
+  return {
+    onClickAdd: (taskName) => dispatch(addNewTask(taskName)),
+  };
 };
 const AddContainer = connect(mapStateToProps, mapDispatchToProps)(AddComponent);
 

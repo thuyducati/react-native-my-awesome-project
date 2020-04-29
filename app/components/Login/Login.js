@@ -14,6 +14,13 @@ import {
 import styles from "./styles";
 
 class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: ""
+        };
+    }
+
     render() {
         return (
             <SafeAreaView
@@ -46,6 +53,8 @@ class Login extends Component {
                                     keyboardType="email-address"
                                     returnKeyType="next"
                                     autoCorrect={false}
+                                    ref={"usernameField"}
+                                    onChangeText={(changedText) => this.setState({ username: changedText })}
                                     onSubmitEditing={() => this.refs.passwordField.focus()}
                                     style={styles.loginField} />
                                 <TextInput
@@ -58,7 +67,13 @@ class Login extends Component {
                                     ref={"passwordField"}
                                     style={styles.loginField} />
                                 <TouchableOpacity
-                                    onPress={() => this.props.navigation.navigate("Home")}
+                                    onPress={
+                                        () => {
+                                            this.props.navigation.navigate("Home", {
+                                                otherParam: this.state.username
+                                            })
+                                        }
+                                    }
                                     style={styles.loginButton}>
                                     <Text
                                         style={styles.loginText}>

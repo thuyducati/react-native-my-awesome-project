@@ -629,6 +629,7 @@
 				00E356EF1AD99517003FC87E /* MyAwesomeProjectTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				9BC5E53B0167477BAECA5062 /* Resources */,
 				6C7BF5A8C9AF451395E36758 /* Resources */,
 			);
 			indentWidth = 2;
